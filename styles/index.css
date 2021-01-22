@@ -238,6 +238,7 @@ header .logo-name {
   background-color: ghostwhite;
   position: absolute;
   width: 100%;
+  max-height: 100vh;
   top: 100%;
   left: 1%;
   right: 1%;
@@ -246,12 +247,14 @@ header .logo-name {
   padding-top: 2%;
   padding-bottom: 2%;
   border-radius: .3rem;
+  overflow: auto;
 }
 
 .search-box .search-result p {
   margin: 0;
-  padding: .5rem;
+  padding: 1rem;
   color: rgba(0, 0, 0, 0.747);
+  font-weight: bold;
 }
 
 .search-box .search-result p:hover, .search-box .search-result p:focus {
