@@ -1,3 +1,9 @@
+//------- FIREBASE ----------------//
+
+var database = firebase.database();
+var qna_ref = database.ref("qna");
+var qna_search_ref = database.ref("qna");
+
 // ======== FUNCTIONS ================== //
 load_questtion_and_options = function(index,question,option1,option2,option3,option4){
     let html = "<section class='question-section'>";
@@ -146,12 +152,37 @@ load_questtion_and_options = function(index,question,option1,option2,option3,opt
     });
 }
 
-//------- FIREBASE ----------------//
+format_search_suggesstions = function(){
+    $(".search-result").empty();
+    qna_search_ref.once("value",function(snap){
+        if(snap.val() === null){
+            $(".search-result").html("<p>No Suggesstions Yet!!");
+            $(".search-result").hide();
+            return;
+        }
+        for(i in snap.val()){
+            suggestion = snap.val()[i]["question_text"];
+            suggestion_id = i;
+            if(suggestion.includes($("#query").val().toLowerCase())){
+                load_search_suggesstions(suggestion,suggestion_id);
+            }
+        }
+    });
+}
 
-var database = firebase.database();
-var qna_ref = database.ref("qna");
+load_search_suggesstions = function(suggestion,suggestion_id){
+    let html = "<p id='"+suggestion_id+"'>"+suggestion+"</p>";
+    if(!$(".search-result").text().includes(suggestion)){
+        $(".search-result").append(html);
+    }
+    $(".search-result").show();
+    $("#"+suggestion_id).on("click",function(e){
+        $("#query").val(e.currentTarget.innerText);
+        console.log(e.currentTarget.isClicked);
+    });
+}
 
-qna_ref.on("value",function(snap){
+qna_ref.once("value",function(snap){
     console.log(snap.val());
     let index = 1;
     $(".qna").empty();
@@ -166,4 +197,57 @@ qna_ref.on("value",function(snap){
         let option4 = snap.val()[i]["option4"];
         load_questtion_and_options(index++,question,option1,option2,option3,option4);
     }
+});
+
+$("#query").on("keydown",function(){
+    format_search_suggesstions();
+});
+$("#query").on("keypress",function(){
+    format_search_suggesstions();
+});
+$("#query").on("focus",function(){
+    format_search_suggesstions();
+});
+$("header").on("click",function(){
+    if($("#query").val() === "" || $.trim($(".search-result").text()) === "No Suggesstions Yet!!"){
+        $(".search-result").empty();
+        $(".search-result").html("<p>No Suggesstions Yet!!");
+        $(".search-result").hide();
+    }
+    else{
+        $(".search-result").show();
+    }
+});
+$("main").on("click",function(){
+    if($("#query").val() === "" || $.trim($(".search-result").text()) === "No Suggesstions Yet!!"){
+        $(".search-result").empty();
+        $(".search-result").html("<p>No Suggesstions Yet!!");
+        $(".search-result").hide();
+    }
+    else{
+        $(".search-result").show();
+    }
+});
+
+$(".search-icon").on("click",function(){
+    $(".search-result").empty();
+    $(".search-result").html("<p>No Suggesstions Yet!!");
+    $(".search-result").hide();
+    let query = $.trim($("#query").val()).toLowerCase();
+    qna_ref.orderByChild("question_text").startAt(query).endAt(query+"\uf8ff").once("value",function(snap){
+        console.log(snap.val());
+        let index = 1;
+        $(".qna").empty();
+        if(snap.val() === null){
+            $(".qna").html("<h3 style='text-align:center; color:rgba(0, 0, 0, 0.582);font-weight:normal;'>No Questions...!!!</h3>");
+        }
+        for(let i in snap.val()){
+            let question = snap.val()[i]["question"];
+            let option1 = snap.val()[i]["option1"];
+            let option2 = snap.val()[i]["option2"];
+            let option3 = snap.val()[i]["option3"];
+            let option4 = snap.val()[i]["option4"];
+            load_questtion_and_options(index++,question,option1,option2,option3,option4);
+        }
+    });
 });
