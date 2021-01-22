@@ -182,9 +182,59 @@ header .logo-name {
   font-weight: bold;
 }
 
+.search-box {
+  position: fixed;
+  top: 8%;
+  right: 4%;
+  left: 4%;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-box .search-input {
+  width: 80%;
+}
+
+.search-box .search-input input[type=search] {
+  width: 100%;
+  padding: .8rem;
+  border: 1px solid rgba(0, 0, 0, 0.308);
+  border-radius: .3rem;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.527);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.527);
+}
+
+.search-box .search-icon {
+  background-color: #0277BD;
+  color: white;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.527);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.527);
+}
+
 main {
   background-color: ghostwhite;
   position: relative;
+  z-index: 1;
   margin: 2%;
   padding: 1%;
   border-radius: .5rem;
