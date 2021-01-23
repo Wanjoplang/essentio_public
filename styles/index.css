@@ -260,6 +260,7 @@ header .logo-name {
 .search-box .search-result p:hover, .search-box .search-result p:focus {
   background-color: rgba(211, 211, 211, 0.425);
   color: black;
+  cursor: pointer;
 }
 
 main {
