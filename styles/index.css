@@ -13,29 +13,24 @@ body {
   overflow: hidden;
 }
 
-main .home {
+.home {
   background-color: ghostwhite;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-main .home .home-img {
+.home .home-img {
+  margin-top: 10%;
   width: 100%;
 }
 
-main .home .description blockquote {
+.home .description blockquote {
   text-align: center;
   color: #37474f;
   letter-spacing: 1.5px;
@@ -48,6 +43,16 @@ main .home .description blockquote {
   padding: 2%;
   border-radius: .5rem;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .categories .topic-list .topic {
@@ -66,9 +71,6 @@ main .home .description blockquote {
   border-radius: .2rem;
   border: 1px solid #607d8b;
   outline: none;
-  position: absolute;
-  bottom: 2%;
-  left: 2%;
 }
 
 .categories .next {
@@ -76,9 +78,6 @@ main .home .description blockquote {
   border-radius: .2rem;
   border: 1px solid #607d8b;
   outline: none;
-  position: absolute;
-  bottom: 2%;
-  right: 2%;
 }
 
 .highlight {
