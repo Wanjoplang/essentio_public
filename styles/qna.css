@@ -10,7 +10,7 @@ body {
 }
 
 header {
-  padding: .5rem;
+  padding: 1rem;
   background-color: #03A9F4;
   color: white;
   position: -webkit-sticky;
@@ -34,7 +34,7 @@ header .logo-name {
 
 .search-box {
   position: fixed;
-  top: 8%;
+  top: 11%;
   right: 4%;
   left: 4%;
   z-index: 2;
@@ -118,7 +118,7 @@ main {
   background-color: ghostwhite;
   position: relative;
   z-index: 1;
-  margin: 10% 2%;
+  margin: 12% 2%;
   padding: 1%;
   border-radius: .5rem;
   -webkit-box-shadow: 0 2px 4px 0 #525252;
