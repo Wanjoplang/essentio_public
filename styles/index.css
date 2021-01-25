@@ -57,6 +57,7 @@ main .home .description blockquote {
   -webkit-transition: background-color 250ms ease, color 250ms ease;
   transition: background-color 250ms ease, color 250ms ease;
   margin: 1%;
+  font-size: 1rem;
 }
 
 .categories .back {
