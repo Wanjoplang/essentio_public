@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+}
+main{
+    .home{
+        background-color: ghostwhite;
+        height:100vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        .home-img{
+            width:100%;
+        }
+        .description{
+            blockquote{
+                text-align: center;
+                color:#37474f;
+                letter-spacing: 1.5px;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+.categories{
+    background-color: ghostwhite;
+    position: relative;
+    padding:2%;
+    border-radius: .5rem;
+    height: 100vh;
+    .topic-list{
+        .topic{
+            padding:.5rem 1rem;
+            border-radius:1rem;
+            border:1px solid #607d8b;
+            outline: none;
+            transition: background-color 250ms ease, color 250ms ease;
+            margin: 1%;
+            font-size: 1rem;
+        }
+    }
+    .back{
+        padding:.5rem 1rem;
+        border-radius:.2rem;
+        border:1px solid #607d8b;
+        outline: none;
+        position: absolute;
+        bottom:2%;left:2%;     
+    }
+    .next{
+        padding:.5rem 1rem;
+        border-radius:.2rem;
+        border:1px solid #607d8b;
+        outline: none;
+        position: absolute;
+        bottom:2%;right:2%;     
+    }
+}
+.highlight{
+    background-color:  #607d8b;
+    color:white;
+    box-shadow: 0 2px 4px 0  rgba(0, 0, 0, 0.479);
+}
+.view-topics{
+    text-decoration: none;
+    padding:.5rem 1rem;
+    border-radius:.2rem;
+    border:1px solid #607d8b;
+    outline: none;
+    font-size: 1.1rem;
+}
