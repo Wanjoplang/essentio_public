@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questions & Options Client</title>
+    <title>Multiple Choice Questions Client</title>
     <link rel="stylesheet" href="styles/index.css">
     <script src="resources/jquery/jquery.js"></script>
     <script src="resources/fontawesome/fontawesome.js"></script>
@@ -13,36 +13,28 @@
     <script src="resources/firebase/firebase_config.js"></script>
 </head>
 <body>
-    <header>
-        <span class="logo-name">Q & O</span>
-        <div class="sub-logo-name">Questions & Options</div>
-    </header>
-    <span class="search-box">
-        <div class="search-controls">
-            <div class="search-input"><input type="search" id="query" placeholder="Search for Questions & Options..."></div>
-            <div class="search-icon"><i class="fas fa-search"></i></div>
-        </div>
-        <div class="search-result" hidden>
-            <p>No Suggesstions Yet!!</p>
-        </div>
-    </span>
-    <main>        
-        <div class="qna">
-            <h4 style="text-align:center; color:rgba(0, 0, 0, 0.582);font-weight:normal;">
-                Questions and Options will be shown here..<br/>In case you do not see it, you have to check your <b><i>Internet Connectivity</i></b><br/>Then <b><i>Reload</i></b> your page.<br/><br/>If nothing loads even after you have made sure that your Internet Connection is ok..<br/>Then <b><q><i>Please Bear With Us While It Is......</i></q></b>
-                <div class="loading">
-                    <span class="box box-1">L</span>
-                    <span class="box box-2">O</span>
-                    <span class="box box-3">A</span>
-                    <span class="box box-4">D</span>
-                    <span class="box box-5">I</span>
-                    <span class="box box-6">N</span>
-                    <span class="box box-7">G</span>
-                </div>
-            </h4>
-        </div>
+    <main id="main">
+        <section class="home">
+            <div class="home-img">
+                <img src="assets/welcome2.png" alt="" style="width: 100%;">
+            </div>
+            <div class="logo-name">QUESTIONS<br/>&<br/>OPTIONS</div>
+        </section>
+        <section class="description">
+            <blockquote>
+                Questions & Options is a platform where <b><i>questions</i></b> and <b><i>options</i></b> of different topics are given where anyone can learn and enjoy while doing so..
+            </blockquote>
+            <a href="#categories"><button class="highlight view-topics">Get Started</button></a>
+        </section>
     </main>
-
+    <section class="categories" id="categories">
+        <h4>Select your topic</h4>
+        <div class="topic-list">
+            <center><span style="color:rgb(78, 78, 78)">Loading Topics....</span></center>
+        </div>
+        <a class="back highlight"><i class="fas fa-arrow-left"></i> Back</a>
+        <a class="next highlight">Next <i class="fas fa-arrow-right"></i></a>
+    </section>
     <script src="scripts/index.js"></script>
 </body>
 </html>
