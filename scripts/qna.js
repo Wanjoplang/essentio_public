@@ -271,5 +271,4 @@ $(".search-icon").on("click",function(){
 });
 $("#back").on("click",function(){
     window.history.back();
-    window.history.back();
 });

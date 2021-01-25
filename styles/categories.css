@@ -47,7 +47,7 @@ header span:nth-of-type(2) {
   -webkit-transition: background-color 250ms ease, color 250ms ease;
   transition: background-color 250ms ease, color 250ms ease;
   border-radius: .3rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .highlight {
@@ -55,10 +55,5 @@ header span:nth-of-type(2) {
   color: white;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.479);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.479);
-  text-decoration: none;
-  padding: .5rem 1rem;
-  border-radius: .2rem;
-  border: 1px solid #607d8b;
-  outline: none;
 }
 /*# sourceMappingURL=categories.css.map */
