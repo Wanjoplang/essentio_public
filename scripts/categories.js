@@ -17,6 +17,12 @@ category_ref.once("value",function(snap){
             else{
                 topic_list += ","+$(this).text();
             }
+            if(topic_list === ""){
+                $(".next").fadeOut();
+            }
+            else{
+                $(".next").fadeIn();
+            }
         });
     }
 });
