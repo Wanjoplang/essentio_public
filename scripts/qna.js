@@ -5,6 +5,7 @@ var qna_search_ref = database.ref("qna");
 
 // ======== FUNCTIONS ================== //
 load_questtion_and_options = function(index,question,option1,option2,option3,option4,category){
+    // $(".logo-name").html(localStorage.getItem("topic_list"));
     let html = "<section class='question-section'>";
     html += "<h1>Question "+index+" <small style='font-weight:normal'>("+category+")</small></h1>";
     html += "<div id='preview' class='preview'>"+question+"</div>";

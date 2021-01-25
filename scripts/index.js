@@ -2,6 +2,7 @@
 var database = firebase.database();
 var category_ref = database.ref("categories");
 var topic_list = "";
+localStorage.clear();
 
 // ======== EVENTS ===================== //
 category_ref.once("value",function(snap){

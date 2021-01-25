@@ -13,54 +13,29 @@ body {
   overflow: hidden;
 }
 
-main {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-}
-
 main .home {
-  background-color: #81c0f6;
-  height: 60vh;
+  background-color: ghostwhite;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-main .home .logo-name {
-  color: #fefffe;
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 main .home .home-img {
-  width: 80%;
+  width: 100%;
 }
 
-main .description {
-  height: 40vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+main .home .description blockquote {
   text-align: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  background-color: ghostwhite;
-}
-
-main .description blockquote {
   color: #37474f;
   letter-spacing: 1.5px;
   line-height: 1.5;
@@ -69,7 +44,6 @@ main .description blockquote {
 .categories {
   background-color: ghostwhite;
   position: relative;
-  z-index: 1;
   padding: 2%;
   border-radius: .5rem;
   height: 100vh;
